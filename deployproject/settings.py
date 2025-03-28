@@ -83,8 +83,12 @@ WSGI_APPLICATION = 'deployproject.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+# }
+
 DATABASES = {
-    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+    'default': dj_database_url.config(default=os.getenv('DATABASE'))
 }
 
 # Password validation
